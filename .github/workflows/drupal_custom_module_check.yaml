@@ -9,12 +9,10 @@ jobs:
 
       - name: Install PHP CodeSniffer
         run: |
-          composer global require drupal/coder
-          composer global update drupal/coder --prefer-source
+          composer --no-interaction --no-progress require drupal/coder
           composer global show -P
+
       - name: Check coding standarts
-        run: > 
-          ~/.composer/vendor/bin/phpcs
-          --standard=Drupal
-          --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md,yml 
-          ./web/modules/custom
+        run: | 
+          ./vendor/bin/phpcs --config-set installed_paths vendor/drupal/coder/coder_sniffer
+          ./vendor/bin/phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md,yml ./web/modules/custom
