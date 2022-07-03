@@ -10,7 +10,8 @@ jobs:
       - name: Install PHP CodeSniffer
         run: |
           composer global require drupal/coder
-
+          composer global update drupal/coder --prefer-source
+          composer global show -P
       - name: Check coding standarts
         run: > 
           ~/.config/composer/vendor/bin/phpcs
