@@ -13,5 +13,4 @@ jobs:
           composer require --dev drupal/coder
       - name: Check coding standarts
         run: |
-          cd ci
           vendor/bin/phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md,yml ../web/module/custom
