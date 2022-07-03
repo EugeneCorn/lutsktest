@@ -9,7 +9,6 @@ jobs:
 
       - name: Install PHP CodeSniffer
         run: |
-          composer require --dev dealerdirect/phpcodesniffer-composer-installer
           composer global require drupal/coder
 
       - name: Check coding standarts
