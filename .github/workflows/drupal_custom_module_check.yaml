@@ -1,0 +1,16 @@
+name: Drupal-custom-module-checking
+on: push
+jobs:
+  Custom-module-checking-phpcs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install PHP CodeSniffer
+        run: |
+          cd ci
+          composer require --dev dealerdirect/phpcodesniffer-composer-installer
+          composer require --dev drupal/coder
+      - name: Check coding standarts
+        run: |
+          cd ci
+          vendor/bin/phpcs
