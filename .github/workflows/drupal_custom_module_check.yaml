@@ -13,7 +13,7 @@ jobs:
 
       - name: Check coding standarts
         run: > 
-          ./config/composer/vendor/bin/phpcs
+          ~/.config/composer/vendor/bin/phpcs
           --standard=Drupal
           --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md,yml 
           ./web/modules/custom
