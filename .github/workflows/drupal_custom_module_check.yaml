@@ -5,16 +5,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-        
+        uses: actions/checkout@v3       
+
       - name: Install PHP CodeSniffer
         run: |
           composer require --dev dealerdirect/phpcodesniffer-composer-installer
-          composer require --dev drupal/coder
-      - name: Current location check
-        run: |
-          pwd
-          ls -la
+          composer global require drupal/coder
+
       - name: Check coding standarts
-        run: |
-          vendor/bin/phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md,yml ./web/modules/custom
+        run: > 
+          vendor/bin/phpcs
+          --standard=Drupal
+          --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md,yml 
+          ./web/modules/custom
