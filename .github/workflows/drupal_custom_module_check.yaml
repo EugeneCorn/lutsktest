@@ -9,7 +9,7 @@ jobs:
 
       - name: Install PHP CodeSniffer
         run: |
-          composer --no-interaction --no-progress require drupal/coder
+          composer global require drupal/coder
           composer global show -P
 
       - name: Check coding standarts
