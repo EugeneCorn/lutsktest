@@ -11,6 +11,10 @@ jobs:
         run: |
           composer require --dev dealerdirect/phpcodesniffer-composer-installer
           composer require --dev drupal/coder
+      - name: Current location check
+        run: |
+          pwd
+          ls -la
       - name: Check coding standarts
         run: |
           vendor/bin/phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md,yml ./web/module/custom
